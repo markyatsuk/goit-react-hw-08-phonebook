@@ -14,7 +14,7 @@ const Contacts = ({ contacts, filter }) => {
         {filteredContacts.map((contact) => {
           return (
             <li key={contact.id} className={s.contact}>
-              {contact.name}: <span>{contact.phone}</span>
+              {contact.name}: <span>{contact.number}</span>
               <button
                 type="button"
                 className={s.delete_btn}

@@ -1,25 +1,28 @@
-import { useState } from "react";
-import { Contacts } from "./Contacts";
-import { Section } from "./Section";
-import { Form } from "./Form";
-import { Filter } from "./Filter";
-import { useGetContactsQuery } from "../../redux/reducer";
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import Navigation from "./Navigation";
+import { Route, Routes } from "react-router-dom";
+import ContactsView from "../../views/ContactsView/ContactsView";
+import LoginView from "../../views/LoginView/LoginView";
+import RegisterView from "../../views/Register/RegisterView";
+import authOperations from "../../redux/auth/authOperations";
 
 export default function Phonebook() {
-  const [filter, setFilter] = useState("");
-  const { data: contacts } = useGetContactsQuery("");
+  const dispatch = useDispatch();
 
-  console.log("contacts", contacts);
+  useEffect(() => {
+    dispatch(authOperations.fetchCurrentUser());
+  }, [dispatch]);
+
   return (
-    <div>
-      <Section title="Phonebook">
-        <Form contacts={contacts} />
-      </Section>
+    <>
+      <Navigation />
 
-      <Section title="Contacts">
-        <Filter setFilter={setFilter} />
-        {contacts && <Contacts contacts={contacts} filter={filter} />}
-      </Section>
-    </div>
+      <Routes>
+        <Route path="/contacts" element={<ContactsView />}></Route>
+        <Route path="/login" element={<LoginView />}></Route>
+        <Route path="/register" element={<RegisterView />}></Route>
+      </Routes>
+    </>
   );
 }

@@ -21,7 +21,7 @@ function Form({ contacts }) {
       alert(`${name} is already in contacts`);
       return;
     }
-    addContact({ name, phone: number });
+    addContact({ name, number });
     e.target.reset();
   }
 
