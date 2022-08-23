@@ -10,7 +10,7 @@ export default function Navigation() {
   return (
     <header className={s.header}>
       <nav>
-        <ContactsMenu />
+        {isLoggedIn && <ContactsMenu />}
         {isLoggedIn ? <UserMenu /> : <AuthMenu />}
       </nav>
     </header>
