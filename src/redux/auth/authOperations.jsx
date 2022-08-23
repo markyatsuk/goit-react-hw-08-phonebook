@@ -1,6 +1,6 @@
 import axios from "axios";
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import { toast } from "react-toastify";
+import Notiflix from "notiflix";
 
 axios.defaults.baseURL = "https://connections-api.herokuapp.com";
 
@@ -20,10 +20,15 @@ const register = createAsyncThunk(
       const { data } = await axios.post("/users/signup", credential);
       console.log(data);
       token.set(data.token);
-      toast.success("Welcome ✔", { theme: "colored" });
+
+      Notiflix.Notify.success("Welcome ✔", {
+        timeout: 2000,
+      });
       return data;
     } catch (error) {
-      toast.info("This user is already registered ⚠", { theme: "colored" });
+      Notiflix.Notify.failure("This user is already registered ⚠", {
+        timeout: 2000,
+      });
       return rejectWithValue(error);
     }
   }
@@ -36,10 +41,15 @@ const logIn = createAsyncThunk(
       const { data } = await axios.post("/users/login", credential);
       console.log(data);
       token.set(data.token);
-      toast.success("Welcome ✔", { theme: "colored" });
+
+      Notiflix.Notify.success("Welcome ✔", {
+        timeout: 2000,
+      });
       return data;
     } catch (error) {
-      toast.error("Wrong login or password ❗", { theme: "colored" });
+      Notiflix.Notify.failure("Wrong login or password ❗", {
+        timeout: 2000,
+      });
       return rejectWithValue(error);
     }
   }

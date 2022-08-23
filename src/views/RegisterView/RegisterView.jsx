@@ -29,34 +29,43 @@ export default function RegisterView() {
     setPassword("");
     e.target.reset();
   }
+
+  const isDisabled = () => {
+    if (email.trim() === "" || password.trim() === "" || name.trim() === "")
+      return true;
+  };
+
   return (
     <div className={s.authContiner}>
+      <h1 className={s.afterTitle}>Registration</h1>
       <form className={s.searchForm} id="search-form" onSubmit={handleSubmit}>
-        <input
-          className={s.form__input}
-          type="text"
-          name="name"
-          autoComplete="off"
-          placeholder="ex: Benedict Cumberbatch"
-          onChange={handleChange}
-        />
-        <input
-          className={s.form__input}
-          type="email"
-          name="email"
-          autoComplete="off"
-          placeholder="ex: benedictcumberbatch@gmail.com"
-          onChange={handleChange}
-        />
-        <input
-          className={s.form__input}
-          type="password"
-          name="password"
-          autoComplete="off"
-          placeholder="examplepassword"
-          onChange={handleChange}
-        />
-        <button type="submit" className={s.button}>
+        <div className={s.inputContainer}>
+          <input
+            className={s.form__input}
+            type="text"
+            name="name"
+            autoComplete="off"
+            placeholder="ex: Benedict Cumberbatch"
+            onChange={handleChange}
+          />
+          <input
+            className={s.form__input}
+            type="email"
+            name="email"
+            autoComplete="off"
+            placeholder="ex: benedictcumberbatch@gmail.com"
+            onChange={handleChange}
+          />
+          <input
+            className={s.form__input}
+            type="password"
+            name="password"
+            autoComplete="off"
+            placeholder="examplepassword"
+            onChange={handleChange}
+          />
+        </div>
+        <button type="submit" className={s.button} disabled={isDisabled()}>
           Register
         </button>
       </form>

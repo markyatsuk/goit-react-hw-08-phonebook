@@ -1,5 +1,5 @@
-import s from "./Phonebook.module.css";
-import { useDeleteContactMutation } from "../../redux/reducer";
+import s from "./Contacts.module.css";
+import { useDeleteContactMutation } from "../../../redux/reducer";
 
 const Contacts = ({ contacts, filter }) => {
   const [deleteContact] = useDeleteContactMutation();

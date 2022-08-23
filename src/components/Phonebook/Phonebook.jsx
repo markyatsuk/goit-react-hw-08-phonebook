@@ -1,7 +1,7 @@
 import { useEffect, lazy, Suspense } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import Navigation from "./Navigation";
-import { Route, Routes } from "react-router-dom";
+import Navigation from "./Navigation/Navigation";
+import { Route, Routes, Navigate } from "react-router-dom";
 import authOperations from "../../redux/auth/authOperations";
 import PrivateRoute from "./PrivateRoute/PrivateRoute";
 import PublicRoute from "./PublicRoute/PublicRoute";
@@ -38,6 +38,7 @@ export default function Phonebook() {
         <Navigation />
         <Suspense>
           <Routes>
+            <Route path="/" element={<Navigate to="login" />}></Route>
             <Route element={<PrivateRoute redirectTo="login" />}>
               <Route path="/contacts" element={<ContactsView />}></Route>
             </Route>

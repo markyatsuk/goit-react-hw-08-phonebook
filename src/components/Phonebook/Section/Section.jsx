@@ -1,4 +1,4 @@
-import s from "./Phonebook.module.css";
+import s from "./Section.module.css";
 
 const Section = ({ title, children }) => (
   <div>

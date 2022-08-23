@@ -1,0 +1,77 @@
+.formContainer {
+  width: 500px;
+  background-color: rgb(215, 194, 177);
+  padding: 10px 0px;
+  /* margin: 0 auto; */
+  border-radius: 5px;
+}
+
+fieldset {
+  border: 1px rgb(1, 27, 90) dashed;
+}
+
+/* 
+.form__button {
+    margin-top: 10px;
+    padding: 10px 15px;
+    color: aliceblue;
+    background-color: rgb(78, 86, 245);
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: 500;
+  }
+  
+  .form__button:hover {
+    transform: scale(1.05);
+  } */
+
+.form__button {
+  display: block;
+  height: 38px;
+  border-radius: 5px;
+  transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  outline: none;
+  margin-top: 5px;
+  font-size: 16px;
+  border: none;
+  background-color: #fff;
+  font-family: "Aboreto", cursive;
+  margin-top: 15px;
+}
+
+.form__button:not([disabled]):hover {
+  background-color: rgb(1, 27, 90);
+  color: #fff;
+}
+.form {
+  width: 500px;
+}
+
+.form__input {
+  width: 368px;
+  padding: 0px 15px;
+
+  margin-right: 15px;
+  font-size: 14px;
+  letter-spacing: 0.05;
+  font-family: "Aboreto", cursive;
+  color: rgb(1, 27, 90);
+  border: 1px transparent solid;
+  height: 41px;
+  transition: border 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.form__input + .form__input {
+  margin-top: 25px;
+}
+
+.form__input:focus {
+  border: 1px rgb(1, 27, 90) solid;
+}
+
+.form__input::placeholder {
+  font-family: "Aboreto", cursive;
+  color: rgb(1, 27, 90);
+}

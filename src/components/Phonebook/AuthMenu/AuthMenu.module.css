@@ -1,0 +1,29 @@
+.nav__list {
+  list-style: none;
+  display: flex;
+  margin-top: 27px;
+}
+
+.list__item + .list__item {
+  margin-left: 7px;
+}
+
+.nav__links {
+  text-decoration: none;
+  color: rgb(1, 27, 90);
+  font-size: 20px;
+  letter-spacing: 0.05px;
+  font-weight: 600;
+}
+
+.activeNavLink {
+  text-decoration: none;
+  font-size: 20px;
+  letter-spacing: 0.05px;
+  font-weight: 600;
+  color: rgb(215, 194, 177);
+}
+
+.nav__links:hover {
+  color: rgb(215, 194, 177);
+}

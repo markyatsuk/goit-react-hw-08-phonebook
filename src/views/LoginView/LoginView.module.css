@@ -1,47 +1,71 @@
 .form__input {
-  width: 100% - 15px;
+  width: 368px;
   padding: 0px 15px;
   color: rgb(62, 26, 95);
   margin-right: 15px;
   font-size: 16px;
-  /* outline: none; */
-  border: 1px black solid;
+  font-family: "Aboreto", cursive;
+  color: rgb(1, 27, 90);
+  border: 1px transparent solid;
   height: 41px;
+  transition: border 150ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .form__input + .form__input {
-  margin-top: 20px;
+  margin-top: 25px;
 }
+
+.form__input:focus {
+  border: 1px rgb(1, 27, 90) solid;
+}
+
+.form__input::placeholder {
+  font-family: "Aboreto", cursive;
+  color: rgb(1, 27, 90);
+}
+
 .button {
   display: block;
   height: 48px;
   border-radius: 5px;
-  background-image: url("https://image.flaticon.com/icons/svg/149/149852.svg");
-  background-size: 40%;
-  background-repeat: no-repeat;
-  background-position: center;
-  /* opacity: 0.6; */
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 150ms cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;
   outline: none;
   margin-top: 5px;
+  font-size: 19px;
+  border: none;
+  background-color: #fff;
+  font-family: "Aboreto", cursive;
 }
 
-.button:hover {
-  background-color: #fff;
-  color: black;
+.button:not([disabled]):hover {
+  background-color: rgb(1, 27, 90);
+  color: #fff;
 }
 
 .authContiner {
   width: 400px;
-  height: 700px;
-  background-color: rgb(191, 191, 191);
+  height: 500px;
+  background-color: rgb(215, 194, 177);
   padding: 15px 20px;
   margin: 0 auto;
-  margin-top: 50px;
+  margin-top: 100px;
   border-radius: 5px;
+}
+.title,
+.afterTitle {
+  text-align: center;
+  color: rgb(1, 27, 90);
 }
 
 .searchForm {
   display: flex;
+  height: 70%;
   flex-direction: column;
+  justify-content: space-between;
+  padding: 15px 0;
+}
+
+.inputContainer {
+  width: 100%;
 }
