@@ -6,6 +6,7 @@ import authOperations from "../../redux/auth/authOperations";
 import PrivateRoute from "./PrivateRoute/PrivateRoute";
 import PublicRoute from "./PublicRoute/PublicRoute";
 import authSelectors from "../../redux/auth/authSelectors";
+import NotFoundView from "../../views/NotFound/NotFoundView";
 
 const ContactsView = lazy(() =>
   import(
@@ -48,6 +49,7 @@ export default function Phonebook() {
             <Route element={<PublicRoute restricted redirectTo="contacts" />}>
               <Route path="/register" element={<RegisterView />}></Route>
             </Route>
+            <Route path="*" element={<NotFoundView />}></Route>
           </Routes>
         </Suspense>
       </>
